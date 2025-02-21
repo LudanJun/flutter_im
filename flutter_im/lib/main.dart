@@ -22,14 +22,14 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true, //使用Material3
         fontFamily: "Poppins", // 字体
-        scaffoldBackgroundColor: Colors.white, //背景颜色
+        scaffoldBackgroundColor: Colors.white, //页面背景颜色
         splashFactory: NoSplash.splashFactory, //去除水波纹效果
         //AppBar主题
         appBarTheme: AppBarTheme(
           elevation: 0, //去除阴影
           scrolledUnderElevation: 0, //去除滚动时的阴影
-          foregroundColor: Colors.black, //标题颜色
-          backgroundColor: Colors.white, //背景颜色
+          foregroundColor: Colors.black, //标题颜色 返回按钮颜色
+          backgroundColor: Colors.transparent, //导航栏背景颜色
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent, // 状态栏颜色
             statusBarBrightness: Brightness.light, //状态亮度
@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
         ),
         colorScheme: ColorScheme.light(
           primary: Color(0xFF212529), //按钮文字颜色 进度条
-          surface: Color(0xFF212529), //表面颜色，按钮 等颜色
+          surface: Color(0xFF212529), //表面颜色，可以设置按钮背景 等颜色
           // onSurface: Colors.white, //表面颜色，按钮 等颜色
           // onPrimary: Colors.white, //按钮文字颜色 进度条
           // onSecondary: Colors.white, //背景颜色
@@ -85,10 +85,24 @@ class MainApp extends StatelessWidget {
         ),
         //按钮主题
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue, //按钮颜色
-            foregroundColor: Colors.white, //文字颜色
-            elevation: 0, //去除阴影
+          // style: ElevatedButton.styleFrom(
+          //   backgroundColor: Colors.blue, //按钮颜色
+          //   foregroundColor: Colors.white, //文字颜色
+          //   elevation: 0, //去除阴影
+          // ),
+          style: ButtonStyle(
+            minimumSize: WidgetStatePropertyAll(
+              Size.fromHeight(56), //按钮高度
+            ),
+            foregroundColor: const WidgetStatePropertyAll(
+              Colors.white, //按钮文字颜色
+            ),
+            elevation: WidgetStatePropertyAll(0), //去除阴影
+            shape: WidgetStatePropertyAll(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12), //按钮圆角
+              ),
+            ),
           ),
         ),
         textButtonTheme: TextButtonThemeData(
