@@ -32,7 +32,7 @@ class _ChatsPageState extends State<ChatsPage> {
             onPressed: () {},
             icon: SvgPicture.asset("images/search.svg"),
           ),
-          title: "Chats",
+          title: "聊天",
           actions: [
             IconButton(
               onPressed: () {},
@@ -69,7 +69,7 @@ class _ChatsPageState extends State<ChatsPage> {
               .sliver(), //  设置sliver为HeaderLocator.sliver()，即使用HeaderLocator.sliver()作为sliver
         ),
         SliverToBoxAdapter(
-          child: BodyTitle(title: "Chats"),
+          child: BodyTitle(title: "聊天"),
         ),
         //  创建一个SliverSafeArea，用于包裹SliverList
         SliverSafeArea(

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_im/mixin/appbar_mixin.dart';
 import 'package:flutter_im/models/chat.dart';
+import 'package:flutter_im/pages/chat/chat_page.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
@@ -139,6 +140,6 @@ class ChatsController extends GetxController
   }
 
   void showChat(Chat chat) {
-    // Get.to(() => ChatPage(), arguments: chat);
+    Get.to(() => ChatPage(), arguments: chat);
   }
 }
